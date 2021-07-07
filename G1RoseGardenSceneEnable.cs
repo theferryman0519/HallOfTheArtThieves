@@ -1,0 +1,870 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+using Firebase;
+using Firebase.Auth;
+using Firebase.Database;
+using Firebase.Unity.Editor;
+
+public class G1RoseGardenSceneEnable : MonoBehaviour {
+		
+// ---------------------------------------- START: LIST OF VARIABLES ----------------------------------------
+// --------------- PUBLIC VARIABLES ---------------
+	// Main Obejcts
+	public Renderer VanHemessen;
+	public Renderer VanHemessenGhost;
+    public Renderer Kahlo;
+	public Renderer KahloGhost;
+	
+	// Base Objects
+	public Renderer GardenGrass1;
+    public Renderer GardenGrass2;
+    public Renderer GardenGrass3;
+	public Renderer WallBack;
+	
+	public Renderer WallLightLeftHolder;
+	public ParticleSystem WallLightLeftFire;
+	public Light WallLightLeftLight;
+	
+	public Renderer WallLightRightHolder;
+	public ParticleSystem WallLightRightFire;
+	public Light WallLightRightLight;
+	
+	// Other Objects
+	public Renderer RoseLeafA1;
+    public Renderer RoseLeafB1;
+    public Renderer RoseLeafC1;
+    public Renderer RoseLeafD1;
+    public Renderer RoseRose1;
+    public Renderer RoseStem1;
+    public Renderer RoseLeafA2;
+    public Renderer RoseLeafB2;
+    public Renderer RoseLeafC2;
+    public Renderer RoseLeafD2;
+    public Renderer RoseRose2;
+    public Renderer RoseStem2;
+    public Renderer RoseLeafA3;
+    public Renderer RoseLeafB3;
+    public Renderer RoseLeafC3;
+    public Renderer RoseLeafD3;
+    public Renderer RoseRose3;
+    public Renderer RoseStem3;
+    public Renderer RoseLeafA4;
+    public Renderer RoseLeafB4;
+    public Renderer RoseLeafC4;
+    public Renderer RoseLeafD4;
+    public Renderer RoseRose4;
+    public Renderer RoseStem4;
+    public Renderer RoseLeafA5;
+    public Renderer RoseLeafB5;
+    public Renderer RoseLeafC5;
+    public Renderer RoseLeafD5;
+    public Renderer RoseRose5;
+    public Renderer RoseStem5;
+    public Renderer RoseLeafA6;
+    public Renderer RoseLeafB6;
+    public Renderer RoseLeafC6;
+    public Renderer RoseLeafD6;
+    public Renderer RoseRose6;
+    public Renderer RoseStem6;
+    public Renderer RoseLeafA7;
+    public Renderer RoseLeafB7;
+    public Renderer RoseLeafC7;
+    public Renderer RoseLeafD7;
+    public Renderer RoseRose7;
+    public Renderer RoseStem7;
+    public Renderer RoseLeafA8;
+    public Renderer RoseLeafB8;
+    public Renderer RoseLeafC8;
+    public Renderer RoseLeafD8;
+    public Renderer RoseRose8;
+    public Renderer RoseStem8;
+    public Renderer RoseLeafA9;
+    public Renderer RoseLeafB9;
+    public Renderer RoseLeafC9;
+    public Renderer RoseLeafD9;
+    public Renderer RoseRose9;
+    public Renderer RoseStem9;
+    public Renderer RoseLeafA10;
+    public Renderer RoseLeafB10;
+    public Renderer RoseLeafC10;
+    public Renderer RoseLeafD10;
+    public Renderer RoseRose10;
+    public Renderer RoseStem10;
+    public Renderer RoseLeafA11;
+    public Renderer RoseLeafB11;
+    public Renderer RoseLeafC11;
+    public Renderer RoseLeafD11;
+    public Renderer RoseRose11;
+    public Renderer RoseStem11;
+    public Renderer RoseLeafA12;
+    public Renderer RoseLeafB12;
+    public Renderer RoseLeafC12;
+    public Renderer RoseLeafD12;
+    public Renderer RoseRose12;
+    public Renderer RoseStem12;
+    public Renderer RoseLeafA13;
+    public Renderer RoseLeafB13;
+    public Renderer RoseLeafC13;
+    public Renderer RoseLeafD13;
+    public Renderer RoseRose13;
+    public Renderer RoseStem13;
+    public Renderer RoseLeafA14;
+    public Renderer RoseLeafB14;
+    public Renderer RoseLeafC14;
+    public Renderer RoseLeafD14;
+    public Renderer RoseRose14;
+    public Renderer RoseStem14;
+    public Renderer RoseLeafA15;
+    public Renderer RoseLeafB15;
+    public Renderer RoseLeafC15;
+    public Renderer RoseLeafD15;
+    public Renderer RoseRose15;
+    public Renderer RoseStem15;
+    public Renderer RoseLeafA16;
+    public Renderer RoseLeafB16;
+    public Renderer RoseLeafC16;
+    public Renderer RoseLeafD16;
+    public Renderer RoseRose16;
+    public Renderer RoseStem16;
+    public Renderer RoseLeafA17;
+    public Renderer RoseLeafB17;
+    public Renderer RoseLeafC17;
+    public Renderer RoseLeafD17;
+    public Renderer RoseRose17;
+    public Renderer RoseStem17;
+    public Renderer RoseLeafA18;
+    public Renderer RoseLeafB18;
+    public Renderer RoseLeafC18;
+    public Renderer RoseLeafD18;
+    public Renderer RoseRose18;
+    public Renderer RoseStem18;
+    public Renderer RoseLeafA19;
+    public Renderer RoseLeafB19;
+    public Renderer RoseLeafC19;
+    public Renderer RoseLeafD19;
+    public Renderer RoseRose19;
+    public Renderer RoseStem19;
+    public Renderer RoseLeafA20;
+    public Renderer RoseLeafB20;
+    public Renderer RoseLeafC20;
+    public Renderer RoseLeafD20;
+    public Renderer RoseRose20;
+    public Renderer RoseStem20;
+    public Renderer RoseLeafA21;
+    public Renderer RoseLeafB21;
+    public Renderer RoseLeafC21;
+    public Renderer RoseLeafD21;
+    public Renderer RoseRose21;
+    public Renderer RoseStem21;
+    public Renderer RoseLeafA22;
+    public Renderer RoseLeafB22;
+    public Renderer RoseLeafC22;
+    public Renderer RoseLeafD22;
+    public Renderer RoseRose22;
+    public Renderer RoseStem22;
+    public Renderer RoseLeafA23;
+    public Renderer RoseLeafB23;
+    public Renderer RoseLeafC23;
+    public Renderer RoseLeafD23;
+    public Renderer RoseRose23;
+    public Renderer RoseStem23;
+    public Renderer RoseLeafA24;
+    public Renderer RoseLeafB24;
+    public Renderer RoseLeafC24;
+    public Renderer RoseLeafD24;
+    public Renderer RoseRose24;
+    public Renderer RoseStem24;
+    public Renderer RoseLeafA25;
+    public Renderer RoseLeafB25;
+    public Renderer RoseLeafC25;
+    public Renderer RoseLeafD25;
+    public Renderer RoseRose25;
+    public Renderer RoseStem25;
+    public Renderer RoseLeafA26;
+    public Renderer RoseLeafB26;
+    public Renderer RoseLeafC26;
+    public Renderer RoseLeafD26;
+    public Renderer RoseRose26;
+    public Renderer RoseStem26;
+    public Renderer RoseLeafA27;
+    public Renderer RoseLeafB27;
+    public Renderer RoseLeafC27;
+    public Renderer RoseLeafD27;
+    public Renderer RoseRose27;
+    public Renderer RoseStem27;
+    public Renderer RoseLeafA28;
+    public Renderer RoseLeafB28;
+    public Renderer RoseLeafC28;
+    public Renderer RoseLeafD28;
+    public Renderer RoseRose28;
+    public Renderer RoseStem28;
+    public Renderer RoseLeafA29;
+    public Renderer RoseLeafB29;
+    public Renderer RoseLeafC29;
+    public Renderer RoseLeafD29;
+    public Renderer RoseRose29;
+    public Renderer RoseStem29;
+    public Renderer RoseLeafA30;
+    public Renderer RoseLeafB30;
+    public Renderer RoseLeafC30;
+    public Renderer RoseLeafD30;
+    public Renderer RoseRose30;
+    public Renderer RoseStem30;
+    public Renderer RoseLeafA31;
+    public Renderer RoseLeafB31;
+    public Renderer RoseLeafC31;
+    public Renderer RoseLeafD31;
+    public Renderer RoseRose31;
+    public Renderer RoseStem31;
+    public Renderer RoseLeafA32;
+    public Renderer RoseLeafB32;
+    public Renderer RoseLeafC32;
+    public Renderer RoseLeafD32;
+    public Renderer RoseRose32;
+    public Renderer RoseStem32;
+    public Renderer RoseLeafA33;
+    public Renderer RoseLeafB33;
+    public Renderer RoseLeafC33;
+    public Renderer RoseLeafD33;
+    public Renderer RoseRose33;
+    public Renderer RoseStem33;
+    public Renderer RoseLeafA34;
+    public Renderer RoseLeafB34;
+    public Renderer RoseLeafC34;
+    public Renderer RoseLeafD34;
+    public Renderer RoseRose34;
+    public Renderer RoseStem34;
+    public Renderer RoseLeafA35;
+    public Renderer RoseLeafB35;
+    public Renderer RoseLeafC35;
+    public Renderer RoseLeafD35;
+    public Renderer RoseRose35;
+    public Renderer RoseStem35;
+    public Renderer RoseLeafA36;
+    public Renderer RoseLeafB36;
+    public Renderer RoseLeafC36;
+    public Renderer RoseLeafD36;
+    public Renderer RoseRose36;
+    public Renderer RoseStem36;
+    public Renderer RoseLeafA37;
+    public Renderer RoseLeafB37;
+    public Renderer RoseLeafC37;
+    public Renderer RoseLeafD37;
+    public Renderer RoseRose37;
+    public Renderer RoseStem37;
+    public Renderer RoseLeafA38;
+    public Renderer RoseLeafB38;
+    public Renderer RoseLeafC38;
+    public Renderer RoseLeafD38;
+    public Renderer RoseRose38;
+    public Renderer RoseStem38;
+    public Renderer RoseLeafA39;
+    public Renderer RoseLeafB39;
+    public Renderer RoseLeafC39;
+    public Renderer RoseLeafD39;
+    public Renderer RoseRose39;
+    public Renderer RoseStem39;
+    public Renderer RoseLeafA40;
+    public Renderer RoseLeafB40;
+    public Renderer RoseLeafC40;
+    public Renderer RoseLeafD40;
+    public Renderer RoseRose40;
+    public Renderer RoseStem40;
+	
+// --------------- PRIVATE VARIABLES ---------------
+	
+	
+// --------------- STATIC VARIABLES ---------------
+	
+	
+// --------------- FIREBASE VARIABLES ---------------
+	
+	
+// ---------------------------------------- END: LIST OF VARIABLES ----------------------------------------
+// ---------------------------------------- START: CALLING OTHER SCRIPTS ----------------------------------------
+	// Playing Pausing Timers
+    public PausingPlayingTimers AllTimersPlaying;
+	
+// ---------------------------------------- END: CALLING OTHER SCRIPTS ----------------------------------------
+// ---------------------------------------- START: INITIAL FUNCTIONS ----------------------------------------
+// --------------- START FUNCTION ---------------
+	void Start() {
+		G1RoseGardenRoomEnable();
+		
+		G1RoseGardenMainDisable();
+		G1RoseGardenLightLeftDisable();
+		G1RoseGardenLightRightDisable();
+        
+        AllTimersPlaying.AllTimersPlay();
+	}
+	
+// --------------- AWAKE FUNCTION ---------------
+	void Awake() {
+		
+	}
+	
+// --------------- UPDATE FUNCTION ---------------
+	void Update() {
+		G1RoseGardenGhostsShow();
+	}
+	
+// ---------------------------------------- END: INITIAL FUNCTIONS ----------------------------------------
+// ---------------------------------------- START: OTHER FUNCTIONS ----------------------------------------
+// --------------- ENABLE FUNCTIONS ---------------
+	public void G1RoseGardenMainEnable() {
+		VanHemessen.enabled = true;
+		VanHemessenGhost.enabled = true;
+        Kahlo.enabled = true;
+		KahloGhost.enabled = true;
+	}
+	
+	public void G1RoseGardenRoomEnable() {
+		GardenGrass1.enabled = true;
+        GardenGrass2.enabled = true;
+        GardenGrass3.enabled = true;
+		WallBack.enabled = true;
+		
+        RoseLeafA1.enabled = true;
+        RoseLeafB1.enabled = true;
+        RoseLeafC1.enabled = true;
+        RoseLeafD1.enabled = true;
+        RoseRose1.enabled = true;
+        RoseStem1.enabled = true;
+        RoseLeafA2.enabled = true;
+        RoseLeafB2.enabled = true;
+        RoseLeafC2.enabled = true;
+        RoseLeafD2.enabled = true;
+        RoseRose2.enabled = true;
+        RoseStem2.enabled = true;
+        RoseLeafA3.enabled = true;
+        RoseLeafB3.enabled = true;
+        RoseLeafC3.enabled = true;
+        RoseLeafD3.enabled = true;
+        RoseRose3.enabled = true;
+        RoseStem3.enabled = true;
+        RoseLeafA4.enabled = true;
+        RoseLeafB4.enabled = true;
+        RoseLeafC4.enabled = true;
+        RoseLeafD4.enabled = true;
+        RoseRose4.enabled = true;
+        RoseStem4.enabled = true;
+        RoseLeafA5.enabled = true;
+        RoseLeafB5.enabled = true;
+        RoseLeafC5.enabled = true;
+        RoseLeafD5.enabled = true;
+        RoseRose5.enabled = true;
+        RoseStem5.enabled = true;
+        RoseLeafA6.enabled = true;
+        RoseLeafB6.enabled = true;
+        RoseLeafC6.enabled = true;
+        RoseLeafD6.enabled = true;
+        RoseRose6.enabled = true;
+        RoseStem6.enabled = true;
+        RoseLeafA7.enabled = true;
+        RoseLeafB7.enabled = true;
+        RoseLeafC7.enabled = true;
+        RoseLeafD7.enabled = true;
+        RoseRose7.enabled = true;
+        RoseStem7.enabled = true;
+        RoseLeafA8.enabled = true;
+        RoseLeafB8.enabled = true;
+        RoseLeafC8.enabled = true;
+        RoseLeafD8.enabled = true;
+        RoseRose8.enabled = true;
+        RoseStem8.enabled = true;
+        RoseLeafA9.enabled = true;
+        RoseLeafB9.enabled = true;
+        RoseLeafC9.enabled = true;
+        RoseLeafD9.enabled = true;
+        RoseRose9.enabled = true;
+        RoseStem9.enabled = true;
+        RoseLeafA10.enabled = true;
+        RoseLeafB10.enabled = true;
+        RoseLeafC10.enabled = true;
+        RoseLeafD10.enabled = true;
+        RoseRose10.enabled = true;
+        RoseStem10.enabled = true;
+        RoseLeafA11.enabled = true;
+        RoseLeafB11.enabled = true;
+        RoseLeafC11.enabled = true;
+        RoseLeafD11.enabled = true;
+        RoseRose11.enabled = true;
+        RoseStem11.enabled = true;
+        RoseLeafA12.enabled = true;
+        RoseLeafB12.enabled = true;
+        RoseLeafC12.enabled = true;
+        RoseLeafD12.enabled = true;
+        RoseRose12.enabled = true;
+        RoseStem12.enabled = true;
+        RoseLeafA13.enabled = true;
+        RoseLeafB13.enabled = true;
+        RoseLeafC13.enabled = true;
+        RoseLeafD13.enabled = true;
+        RoseRose13.enabled = true;
+        RoseStem13.enabled = true;
+        RoseLeafA14.enabled = true;
+        RoseLeafB14.enabled = true;
+        RoseLeafC14.enabled = true;
+        RoseLeafD14.enabled = true;
+        RoseRose14.enabled = true;
+        RoseStem14.enabled = true;
+        RoseLeafA15.enabled = true;
+        RoseLeafB15.enabled = true;
+        RoseLeafC15.enabled = true;
+        RoseLeafD15.enabled = true;
+        RoseRose15.enabled = true;
+        RoseStem15.enabled = true;
+        RoseLeafA16.enabled = true;
+        RoseLeafB16.enabled = true;
+        RoseLeafC16.enabled = true;
+        RoseLeafD16.enabled = true;
+        RoseRose16.enabled = true;
+        RoseStem16.enabled = true;
+        RoseLeafA17.enabled = true;
+        RoseLeafB17.enabled = true;
+        RoseLeafC17.enabled = true;
+        RoseLeafD17.enabled = true;
+        RoseRose17.enabled = true;
+        RoseStem17.enabled = true;
+        RoseLeafA18.enabled = true;
+        RoseLeafB18.enabled = true;
+        RoseLeafC18.enabled = true;
+        RoseLeafD18.enabled = true;
+        RoseRose18.enabled = true;
+        RoseStem18.enabled = true;
+        RoseLeafA19.enabled = true;
+        RoseLeafB19.enabled = true;
+        RoseLeafC19.enabled = true;
+        RoseLeafD19.enabled = true;
+        RoseRose19.enabled = true;
+        RoseStem19.enabled = true;
+        RoseLeafA20.enabled = true;
+        RoseLeafB20.enabled = true;
+        RoseLeafC20.enabled = true;
+        RoseLeafD20.enabled = true;
+        RoseRose20.enabled = true;
+        RoseStem20.enabled = true;
+        RoseLeafA21.enabled = true;
+        RoseLeafB21.enabled = true;
+        RoseLeafC21.enabled = true;
+        RoseLeafD21.enabled = true;
+        RoseRose21.enabled = true;
+        RoseStem21.enabled = true;
+        RoseLeafA22.enabled = true;
+        RoseLeafB22.enabled = true;
+        RoseLeafC22.enabled = true;
+        RoseLeafD22.enabled = true;
+        RoseRose22.enabled = true;
+        RoseStem22.enabled = true;
+        RoseLeafA23.enabled = true;
+        RoseLeafB23.enabled = true;
+        RoseLeafC23.enabled = true;
+        RoseLeafD23.enabled = true;
+        RoseRose23.enabled = true;
+        RoseStem23.enabled = true;
+        RoseLeafA24.enabled = true;
+        RoseLeafB24.enabled = true;
+        RoseLeafC24.enabled = true;
+        RoseLeafD24.enabled = true;
+        RoseRose24.enabled = true;
+        RoseStem24.enabled = true;
+        RoseLeafA25.enabled = true;
+        RoseLeafB25.enabled = true;
+        RoseLeafC25.enabled = true;
+        RoseLeafD25.enabled = true;
+        RoseRose25.enabled = true;
+        RoseStem25.enabled = true;
+        RoseLeafA26.enabled = true;
+        RoseLeafB26.enabled = true;
+        RoseLeafC26.enabled = true;
+        RoseLeafD26.enabled = true;
+        RoseRose26.enabled = true;
+        RoseStem26.enabled = true;
+        RoseLeafA27.enabled = true;
+        RoseLeafB27.enabled = true;
+        RoseLeafC27.enabled = true;
+        RoseLeafD27.enabled = true;
+        RoseRose27.enabled = true;
+        RoseStem27.enabled = true;
+        RoseLeafA28.enabled = true;
+        RoseLeafB28.enabled = true;
+        RoseLeafC28.enabled = true;
+        RoseLeafD28.enabled = true;
+        RoseRose28.enabled = true;
+        RoseStem28.enabled = true;
+        RoseLeafA29.enabled = true;
+        RoseLeafB29.enabled = true;
+        RoseLeafC29.enabled = true;
+        RoseLeafD29.enabled = true;
+        RoseRose29.enabled = true;
+        RoseStem29.enabled = true;
+        RoseLeafA30.enabled = true;
+        RoseLeafB30.enabled = true;
+        RoseLeafC30.enabled = true;
+        RoseLeafD30.enabled = true;
+        RoseRose30.enabled = true;
+        RoseStem30.enabled = true;
+        RoseLeafA31.enabled = true;
+        RoseLeafB31.enabled = true;
+        RoseLeafC31.enabled = true;
+        RoseLeafD31.enabled = true;
+        RoseRose31.enabled = true;
+        RoseStem31.enabled = true;
+        RoseLeafA32.enabled = true;
+        RoseLeafB32.enabled = true;
+        RoseLeafC32.enabled = true;
+        RoseLeafD32.enabled = true;
+        RoseRose32.enabled = true;
+        RoseStem32.enabled = true;
+        RoseLeafA33.enabled = true;
+        RoseLeafB33.enabled = true;
+        RoseLeafC33.enabled = true;
+        RoseLeafD33.enabled = true;
+        RoseRose33.enabled = true;
+        RoseStem33.enabled = true;
+        RoseLeafA34.enabled = true;
+        RoseLeafB34.enabled = true;
+        RoseLeafC34.enabled = true;
+        RoseLeafD34.enabled = true;
+        RoseRose34.enabled = true;
+        RoseStem34.enabled = true;
+        RoseLeafA35.enabled = true;
+        RoseLeafB35.enabled = true;
+        RoseLeafC35.enabled = true;
+        RoseLeafD35.enabled = true;
+        RoseRose35.enabled = true;
+        RoseStem35.enabled = true;
+        RoseLeafA36.enabled = true;
+        RoseLeafB36.enabled = true;
+        RoseLeafC36.enabled = true;
+        RoseLeafD36.enabled = true;
+        RoseRose36.enabled = true;
+        RoseStem36.enabled = true;
+        RoseLeafA37.enabled = true;
+        RoseLeafB37.enabled = true;
+        RoseLeafC37.enabled = true;
+        RoseLeafD37.enabled = true;
+        RoseRose37.enabled = true;
+        RoseStem37.enabled = true;
+        RoseLeafA38.enabled = true;
+        RoseLeafB38.enabled = true;
+        RoseLeafC38.enabled = true;
+        RoseLeafD38.enabled = true;
+        RoseRose38.enabled = true;
+        RoseStem38.enabled = true;
+        RoseLeafA39.enabled = true;
+        RoseLeafB39.enabled = true;
+        RoseLeafC39.enabled = true;
+        RoseLeafD39.enabled = true;
+        RoseRose39.enabled = true;
+        RoseStem39.enabled = true;
+        RoseLeafA40.enabled = true;
+        RoseLeafB40.enabled = true;
+        RoseLeafC40.enabled = true;
+        RoseLeafD40.enabled = true;
+        RoseRose40.enabled = true;
+        RoseStem40.enabled = true;
+
+		WallLightLeftHolder.enabled = true;
+		WallLightRightHolder.enabled = true;
+	}
+	
+	public void G1RoseGardenLightLeftEnable() {
+		WallLightLeftFire.Play();
+		WallLightLeftLight.enabled = true;
+	}
+	
+	public void G1RoseGardenLightRightEnable() {
+		WallLightRightFire.Play();
+		WallLightRightLight.enabled = true;
+	}
+	
+// --------------- DISABLE FUNCTIONS ---------------
+	public void G1RoseGardenAllDisable() {
+		G1RoseGardenMainDisable();
+		G1RoseGardenRoomDisable();
+		G1RoseGardenLightLeftDisable();
+		G1RoseGardenLightRightDisable();
+	}
+	
+	public void G1RoseGardenMainDisable() {
+		VanHemessen.enabled = false;
+		VanHemessenGhost.enabled = false;
+        Kahlo.enabled = false;
+		KahloGhost.enabled = false;
+	}
+	
+	public void G1RoseGardenRoomDisable() {
+		GardenGrass1.enabled = false;
+        GardenGrass2.enabled = false;
+        GardenGrass3.enabled = false;
+		WallBack.enabled = false;
+		
+        RoseLeafA1.enabled = false;
+        RoseLeafB1.enabled = false;
+        RoseLeafC1.enabled = false;
+        RoseLeafD1.enabled = false;
+        RoseRose1.enabled = false;
+        RoseStem1.enabled = false;
+        RoseLeafA2.enabled = false;
+        RoseLeafB2.enabled = false;
+        RoseLeafC2.enabled = false;
+        RoseLeafD2.enabled = false;
+        RoseRose2.enabled = false;
+        RoseStem2.enabled = false;
+        RoseLeafA3.enabled = false;
+        RoseLeafB3.enabled = false;
+        RoseLeafC3.enabled = false;
+        RoseLeafD3.enabled = false;
+        RoseRose3.enabled = false;
+        RoseStem3.enabled = false;
+        RoseLeafA4.enabled = false;
+        RoseLeafB4.enabled = false;
+        RoseLeafC4.enabled = false;
+        RoseLeafD4.enabled = false;
+        RoseRose4.enabled = false;
+        RoseStem4.enabled = false;
+        RoseLeafA5.enabled = false;
+        RoseLeafB5.enabled = false;
+        RoseLeafC5.enabled = false;
+        RoseLeafD5.enabled = false;
+        RoseRose5.enabled = false;
+        RoseStem5.enabled = false;
+        RoseLeafA6.enabled = false;
+        RoseLeafB6.enabled = false;
+        RoseLeafC6.enabled = false;
+        RoseLeafD6.enabled = false;
+        RoseRose6.enabled = false;
+        RoseStem6.enabled = false;
+        RoseLeafA7.enabled = false;
+        RoseLeafB7.enabled = false;
+        RoseLeafC7.enabled = false;
+        RoseLeafD7.enabled = false;
+        RoseRose7.enabled = false;
+        RoseStem7.enabled = false;
+        RoseLeafA8.enabled = false;
+        RoseLeafB8.enabled = false;
+        RoseLeafC8.enabled = false;
+        RoseLeafD8.enabled = false;
+        RoseRose8.enabled = false;
+        RoseStem8.enabled = false;
+        RoseLeafA9.enabled = false;
+        RoseLeafB9.enabled = false;
+        RoseLeafC9.enabled = false;
+        RoseLeafD9.enabled = false;
+        RoseRose9.enabled = false;
+        RoseStem9.enabled = false;
+        RoseLeafA10.enabled = false;
+        RoseLeafB10.enabled = false;
+        RoseLeafC10.enabled = false;
+        RoseLeafD10.enabled = false;
+        RoseRose10.enabled = false;
+        RoseStem10.enabled = false;
+        RoseLeafA11.enabled = false;
+        RoseLeafB11.enabled = false;
+        RoseLeafC11.enabled = false;
+        RoseLeafD11.enabled = false;
+        RoseRose11.enabled = false;
+        RoseStem11.enabled = false;
+        RoseLeafA12.enabled = false;
+        RoseLeafB12.enabled = false;
+        RoseLeafC12.enabled = false;
+        RoseLeafD12.enabled = false;
+        RoseRose12.enabled = false;
+        RoseStem12.enabled = false;
+        RoseLeafA13.enabled = false;
+        RoseLeafB13.enabled = false;
+        RoseLeafC13.enabled = false;
+        RoseLeafD13.enabled = false;
+        RoseRose13.enabled = false;
+        RoseStem13.enabled = false;
+        RoseLeafA14.enabled = false;
+        RoseLeafB14.enabled = false;
+        RoseLeafC14.enabled = false;
+        RoseLeafD14.enabled = false;
+        RoseRose14.enabled = false;
+        RoseStem14.enabled = false;
+        RoseLeafA15.enabled = false;
+        RoseLeafB15.enabled = false;
+        RoseLeafC15.enabled = false;
+        RoseLeafD15.enabled = false;
+        RoseRose15.enabled = false;
+        RoseStem15.enabled = false;
+        RoseLeafA16.enabled = false;
+        RoseLeafB16.enabled = false;
+        RoseLeafC16.enabled = false;
+        RoseLeafD16.enabled = false;
+        RoseRose16.enabled = false;
+        RoseStem16.enabled = false;
+        RoseLeafA17.enabled = false;
+        RoseLeafB17.enabled = false;
+        RoseLeafC17.enabled = false;
+        RoseLeafD17.enabled = false;
+        RoseRose17.enabled = false;
+        RoseStem17.enabled = false;
+        RoseLeafA18.enabled = false;
+        RoseLeafB18.enabled = false;
+        RoseLeafC18.enabled = false;
+        RoseLeafD18.enabled = false;
+        RoseRose18.enabled = false;
+        RoseStem18.enabled = false;
+        RoseLeafA19.enabled = false;
+        RoseLeafB19.enabled = false;
+        RoseLeafC19.enabled = false;
+        RoseLeafD19.enabled = false;
+        RoseRose19.enabled = false;
+        RoseStem19.enabled = false;
+        RoseLeafA20.enabled = false;
+        RoseLeafB20.enabled = false;
+        RoseLeafC20.enabled = false;
+        RoseLeafD20.enabled = false;
+        RoseRose20.enabled = false;
+        RoseStem20.enabled = false;
+        RoseLeafA21.enabled = false;
+        RoseLeafB21.enabled = false;
+        RoseLeafC21.enabled = false;
+        RoseLeafD21.enabled = false;
+        RoseRose21.enabled = false;
+        RoseStem21.enabled = false;
+        RoseLeafA22.enabled = false;
+        RoseLeafB22.enabled = false;
+        RoseLeafC22.enabled = false;
+        RoseLeafD22.enabled = false;
+        RoseRose22.enabled = false;
+        RoseStem22.enabled = false;
+        RoseLeafA23.enabled = false;
+        RoseLeafB23.enabled = false;
+        RoseLeafC23.enabled = false;
+        RoseLeafD23.enabled = false;
+        RoseRose23.enabled = false;
+        RoseStem23.enabled = false;
+        RoseLeafA24.enabled = false;
+        RoseLeafB24.enabled = false;
+        RoseLeafC24.enabled = false;
+        RoseLeafD24.enabled = false;
+        RoseRose24.enabled = false;
+        RoseStem24.enabled = false;
+        RoseLeafA25.enabled = false;
+        RoseLeafB25.enabled = false;
+        RoseLeafC25.enabled = false;
+        RoseLeafD25.enabled = false;
+        RoseRose25.enabled = false;
+        RoseStem25.enabled = false;
+        RoseLeafA26.enabled = false;
+        RoseLeafB26.enabled = false;
+        RoseLeafC26.enabled = false;
+        RoseLeafD26.enabled = false;
+        RoseRose26.enabled = false;
+        RoseStem26.enabled = false;
+        RoseLeafA27.enabled = false;
+        RoseLeafB27.enabled = false;
+        RoseLeafC27.enabled = false;
+        RoseLeafD27.enabled = false;
+        RoseRose27.enabled = false;
+        RoseStem27.enabled = false;
+        RoseLeafA28.enabled = false;
+        RoseLeafB28.enabled = false;
+        RoseLeafC28.enabled = false;
+        RoseLeafD28.enabled = false;
+        RoseRose28.enabled = false;
+        RoseStem28.enabled = false;
+        RoseLeafA29.enabled = false;
+        RoseLeafB29.enabled = false;
+        RoseLeafC29.enabled = false;
+        RoseLeafD29.enabled = false;
+        RoseRose29.enabled = false;
+        RoseStem29.enabled = false;
+        RoseLeafA30.enabled = false;
+        RoseLeafB30.enabled = false;
+        RoseLeafC30.enabled = false;
+        RoseLeafD30.enabled = false;
+        RoseRose30.enabled = false;
+        RoseStem30.enabled = false;
+        RoseLeafA31.enabled = false;
+        RoseLeafB31.enabled = false;
+        RoseLeafC31.enabled = false;
+        RoseLeafD31.enabled = false;
+        RoseRose31.enabled = false;
+        RoseStem31.enabled = false;
+        RoseLeafA32.enabled = false;
+        RoseLeafB32.enabled = false;
+        RoseLeafC32.enabled = false;
+        RoseLeafD32.enabled = false;
+        RoseRose32.enabled = false;
+        RoseStem32.enabled = false;
+        RoseLeafA33.enabled = false;
+        RoseLeafB33.enabled = false;
+        RoseLeafC33.enabled = false;
+        RoseLeafD33.enabled = false;
+        RoseRose33.enabled = false;
+        RoseStem33.enabled = false;
+        RoseLeafA34.enabled = false;
+        RoseLeafB34.enabled = false;
+        RoseLeafC34.enabled = false;
+        RoseLeafD34.enabled = false;
+        RoseRose34.enabled = false;
+        RoseStem34.enabled = false;
+        RoseLeafA35.enabled = false;
+        RoseLeafB35.enabled = false;
+        RoseLeafC35.enabled = false;
+        RoseLeafD35.enabled = false;
+        RoseRose35.enabled = false;
+        RoseStem35.enabled = false;
+        RoseLeafA36.enabled = false;
+        RoseLeafB36.enabled = false;
+        RoseLeafC36.enabled = false;
+        RoseLeafD36.enabled = false;
+        RoseRose36.enabled = false;
+        RoseStem36.enabled = false;
+        RoseLeafA37.enabled = false;
+        RoseLeafB37.enabled = false;
+        RoseLeafC37.enabled = false;
+        RoseLeafD37.enabled = false;
+        RoseRose37.enabled = false;
+        RoseStem37.enabled = false;
+        RoseLeafA38.enabled = false;
+        RoseLeafB38.enabled = false;
+        RoseLeafC38.enabled = false;
+        RoseLeafD38.enabled = false;
+        RoseRose38.enabled = false;
+        RoseStem38.enabled = false;
+        RoseLeafA39.enabled = false;
+        RoseLeafB39.enabled = false;
+        RoseLeafC39.enabled = false;
+        RoseLeafD39.enabled = false;
+        RoseRose39.enabled = false;
+        RoseStem39.enabled = false;
+        RoseLeafA40.enabled = false;
+        RoseLeafB40.enabled = false;
+        RoseLeafC40.enabled = false;
+        RoseLeafD40.enabled = false;
+        RoseRose40.enabled = false;
+        RoseStem40.enabled = false;
+
+		WallLightLeftHolder.enabled = false;
+		WallLightRightHolder.enabled = false;
+	}
+	
+	public void G1RoseGardenLightLeftDisable() {
+		WallLightLeftFire.Pause();
+		WallLightLeftLight.enabled = false;
+	}
+	
+	public void G1RoseGardenLightRightDisable() {
+		WallLightRightFire.Pause();
+		WallLightRightLight.enabled = false;
+	}
+	
+// --------------- SHOWING FUNCTIONS ---------------
+	public void G1RoseGardenGhostsShow() {
+		if (RoomLightChanging.RoomLightIntensity >= RoomLightChanging.MaxRoomLightIntensity) {
+			G1RoseGardenMainEnable();
+		}
+	}
+	
+// ---------------------------------------- END: OTHER FUNCTIONS ----------------------------------------
+}
